@@ -1,6 +1,10 @@
 package helper;
 
 public class Helper {
+    /**
+     * @param input
+     * @return Converts a character array of raw characters into an array of printable characters.
+     */
     public static char[] convertToPrintableChars(char[] input) {
         char[] converted = new char[input.length];
 
