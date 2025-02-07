@@ -112,6 +112,10 @@ public class User implements Serializable {
         return this.iban;
     }
 
+    public int getId() {
+        return this.id;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

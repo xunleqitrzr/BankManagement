@@ -16,15 +16,21 @@ public enum CountryCode {
 
     public final int countryCode;
 
-    private CountryCode(int countryCode) {
+    CountryCode(int countryCode) {
         this.countryCode = countryCode;
     }
 
-    // return the country code in a numerical format
+    /**
+     * @return Returns the CountryCode in int type/numerical format
+     */
     public int getCountryCode() {
         return countryCode;
     }
 
+    /**
+     * @param countryCode
+     * @return Turn the CountryCode into an array of 4 characters
+     */
     public char[] getCountryCodeAsArray(CountryCode countryCode) {
         char[] countryCodeAsArray = new char[4];
         int ccd = countryCode.getCountryCode();

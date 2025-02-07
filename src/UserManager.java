@@ -7,11 +7,21 @@ public class UserManager {
     private int lastId;
     private List<User> users;
 
+
+    /**
+     * Initialization
+     */
     public UserManager() {
         this.users = new ArrayList<>();
         loadUsers();
     }
 
+    /**
+     * @param name
+     * @param initial_balance
+     * @param overdraft
+     * @return User
+     */
     public User createUser(String name, int initial_balance, int overdraft) {
         lastId++;
         User user = new User(name, lastId, initial_balance, overdraft);
@@ -54,6 +64,9 @@ public class UserManager {
     }
 
 
+    /**
+     * @return Returns a List of Users
+     */
     public List<User> getUsers() {
         return users;
     }
