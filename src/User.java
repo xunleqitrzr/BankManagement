@@ -1,14 +1,21 @@
 import org.jetbrains.annotations.NotNull;
 
-public class User {
+import java.io.Serial;
+import java.io.Serializable;
+
+
+public class User implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+
     private final String name;
     private final int id;
     private int balance;
     private int overdraft;
     private @NotNull IBAN iban;
 
-    private final char[] bank_code  = {1, 2, 0, 3, 0, 0, 0, 0};
-    private final char[] account_no = {9, 4, 9, 2, 2, 9, 0, 0, 0, 3};
+    private final char[] bank_code  = {1, 2, 0, 3, 0, 0, 0, 0};         // change as please
+    private final char[] account_no = {9, 4, 9, 2, 2, 9, 0, 0, 0, 3};   // aswell
 
     /**
      * initial_balance and overdraft are in cents. So 100 initial balance is 1 currency.
@@ -17,9 +24,9 @@ public class User {
      * @param initial_balance
      * @param overdraft
      */
-    public User(String name, int initial_balance, int overdraft) {
+    public User(String name, int id, int initial_balance, int overdraft) {
         this.name = name;
-        this.id = 1;        // temporary
+        this.id = id;
         this.balance = initial_balance;
         this.overdraft = -overdraft;
         this.iban = new IBAN(CountryCode.DE, bank_code, account_no);

@@ -1,11 +1,16 @@
 import org.jetbrains.annotations.NotNull;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Arrays;
 
 import static helper.Helper.convertToPrintableChars;
 
-public class IBAN {
+public class IBAN implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+
     private final CountryCode cc;
     private char[] checksum = new char[2];
     private char[] bank_code = new char[8];
